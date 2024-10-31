@@ -1,0 +1,9 @@
+00_fix_kfreebsd_FTBFS.diff
+01_fix_hurd_FTBFS.diff
+02_build_shared_libs.diff
+03_remove_pthread_link.diff
+04_CVE-2011-4620.diff
+06_spelling_errors.diff
+05_CVE-2012-4552.diff
+07_dont_break_joystick_system_calibration.diff
+08_CVE-2021-38714.patch

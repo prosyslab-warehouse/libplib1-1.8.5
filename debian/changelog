@@ -1,0 +1,549 @@
+plib (1.8.5-13) unstable; urgency=medium
+
+  * [062aa40] Simplify patch, for the previous CVE
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 10 Oct 2021 15:15:11 +0200
+
+plib (1.8.5-12) unstable; urgency=medium
+
+  * [312f625] Update patch for previous CVE
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 09 Oct 2021 10:18:16 +0200
+
+plib (1.8.5-11) unstable; urgency=medium
+
+  * Improve allocation-patch introduced in previous upload.
+    It should fix autopkgtest-failures on arm64 and ppc64el.
+
+ -- Anton Gladky <gladk@debian.org>  Fri, 08 Oct 2021 20:16:46 +0200
+
+plib (1.8.5-10) unstable; urgency=medium
+
+  * [6a45ca2] Add .gitlab-ci.yml
+  * [7284a82] Add autopkgtests
+  * [820a8f6] Prevent integer overflow in ssgLoadTGA() function. CVE-2021-38714
+              (Closes: #992973)
+  * [b3dfe58] Trim trailing whitespace.
+  * [53ad3b7] Update watch file format version to 4.
+  * [11591a3] Avoid explicitly specifying -Wl,--as-needed linker flag.
+  * [ee5f26d] Take the package
+  * [d84e16c] Set compat-level 13. Standards-version: 4.6.0
+  * [fd16cb9] Add not-installed (for .la-files)
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 02 Oct 2021 13:38:47 +0200
+
+plib (1.8.5-9) unstable; urgency=medium
+
+  * QA upload.
+  * debian/control:
+    + Replace obsolete Priority: extra with Priority: optional.
+    + Add Vcs-* fields to use git packaging repo on Debian Salsa GitLab.
+
+ -- Boyuan Yang <byang@debian.org>  Fri, 17 Sep 2021 16:28:49 -0400
+
+plib (1.8.5-8) unstable; urgency=medium
+
+  * QA upload.
+  * Created repository on alioth --> Point VCS-* fields in d/control toward it.
+  * Bump compat level to 10
+  * Refactor d/copyright using the maschine-readable d/copyright format.
+  * Set d/source/format to 3.0 (quilt)
+  * Refresh patch 04_CVE-2011-4620.diff
+  * Rewrite d/rules to utilize short debhelper format and fix *.install to
+    enable Multi-Arch installation.
+  * Remove ancient Conflict/Replace from d/control
+  * Enable hardening
+  * Applying wrap-and-sort
+  * Fix two spelling errors (new patch 06_spelling_errors.diff)
+  * Fix "jsJoystick::open() breaks system calibration on Linux" with the patch
+    from  the BTS. Thanks to Florent Rougon for providing it. (Closes: #787464)
+  * Bump S-V to 4.0.0 -- no changes necessary.
+
+ -- Tobias Frost <tobi@debian.org>  Mon, 24 Jul 2017 21:24:48 +0200
+
+plib (1.8.5-7) unstable; urgency=medium
+
+  * Enable hardened build flags
+
+ -- Moritz Muehlenhoff <jmm@debian.org>  Wed, 08 Jan 2014 18:55:31 +0100
+
+plib (1.8.5-6) unstable; urgency=high
+
+  * QA upload.
+  * Apply patch to fix CVE-2012-4552 by Hans de Goede (Closes: #694810).
+
+ -- Michael Stapelberg <stapelberg@debian.org>  Wed, 05 Dec 2012 17:36:58 +0100
+
+plib (1.8.5-5.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Rebuild source to have -X .la (Closes: #656261).
+
+ -- Luk Claes <luk@debian.org>  Wed, 18 Jan 2012 00:30:12 +0100
+
+plib (1.8.5-5.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * Use vsnprintf to fix buffer overflow CVE-2011-4620 (Closes: #654785).
+  * Don't install .la file anymore (Closes: #633178).
+
+ -- Luk Claes <luk@debian.org>  Sun, 15 Jan 2012 20:13:07 +0100
+
+plib (1.8.5-5) unstable; urgency=low
+
+  * Fix FTBFS on hurd. Thanks to Pino Toscano <pino@kde.org>.
+    Closes: #558790.
+
+ -- Bradley Smith <bradsmith@debian.org>  Mon, 14 Dec 2009 22:21:38 +0000
+
+plib (1.8.5-4) unstable; urgency=low
+
+  * Merge changes to unstable.
+  * Update Standards-Version to 3.8.1. (No changes).
+
+ -- Bradley Smith <bradsmith@debian.org>  Tue, 12 May 2009 11:39:47 +0100
+
+plib (1.8.5-3) experimental; urgency=low
+
+  * Stop replacing ltmain.sh. Closes: #527506.
+
+ -- Bradley Smith <bradsmith@debian.org>  Sat, 09 May 2009 19:00:25 +0100
+
+plib (1.8.5-2) experimental; urgency=low
+
+  * Add 'Provides: plib1.8.4-dev' to libplib-dev.
+
+ -- Bradley Smith <bradsmith@debian.org>  Tue, 24 Feb 2009 13:38:02 +0000
+
+plib (1.8.5-1) experimental; urgency=low
+
+  * New upstream release. Closes: #475354.
+  * debian/control
+    - Update maintainer email address.
+    - Rename binary packages.
+    - Remove obsolote Conflicts/Replaces, and add new ones.
+    - Fix Vcs-* entries.
+  * debian/patches
+    - build_shared_libs - Update soname.
+    - misc_fixes - Refresh
+  * Update compat version to 7 and upgrade debhelper build-depends.
+  * Convert copyright to machine readable format.
+  * Fix watch file.
+
+ -- Bradley Smith <bradsmith@debian.org>  Sun, 22 Feb 2009 12:31:31 +0000
+
+plib (1.8.4-10) unstable; urgency=low
+
+  * Bump shlibs version to 1.8.4-9. Closes: #487367.
+  * Correct dh_* rules order.
+  * Update Vcs entries in debian/control.
+  * Update Standards-Version to 3.8.0.
+    - Support parallel=N in DEB_BUILD_OPTIONS.
+
+ -- Bradley Smith <brad@brad-smith.co.uk>  Sat, 05 Jul 2008 12:39:29 +0100
+
+plib (1.8.4-9) unstable; urgency=low
+
+  * New Maintainer. Closes: #475428
+  * Add games team as uploader.
+  * Add build_shared_libs patch
+   - Build shared libs properly. Closes: #475331
+  * Add remove_pthread_link patch
+   - Remove unneeded linking with pthread
+  * Use fixed ltmain.sh in build
+  * Overhaul packaging. Closes: #475356
+   - Correct debian/control
+   - Fix autotools regeneration
+   - Remove extra whitespace in copyright
+   - Tidy up debian/rules
+   - Update standards and debhelper versions
+   - Add homepage field
+  * Remove unneeded plib1.8.4-pic package.
+  * Change 'downloaded from' in copyright, since it is no longer correct.
+  * Bump shlibs version.
+  * Bump compat version to 5.
+  * Remove changes from top srcdir into misc_fixes patch.
+  * Added missing conflict against plib1.8.3.
+
+ -- Bradley Smith <brad@brad-smith.co.uk>  Fri, 06 Jun 2008 16:16:35 +0100
+
+plib (1.8.4-8) unstable; urgency=low
+
+  * Add versioned shlib to help upgrade to release post -6 (which was buggy).
+    Closes: #436917
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Fri, 10 Aug 2007 22:45:41 +0200
+
+plib (1.8.4-7) unstable; urgency=low
+
+  * Fix libplibjs. Closes: #425724
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Thu, 24 May 2007 21:54:12 +0200
+
+plib (1.8.4-6) unstable; urgency=low
+
+  * Change dependency of libglut3[-dev] to freeglut3[-dev]. Closes: #394500
+  * Updated watch file.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Mon, 23 Oct 2006 22:42:11 +0200
+
+plib (1.8.4-5) unstable; urgency=low
+
+  * Acknowledge NMU of Matthias Klose. Closes: #385836.
+    Removing build-dependency on g++-4.0
+  * #374540 was already handled in -4. Closes: #374540.
+  * #302711 was never really reproducable by other people. The submitter did
+    not answer after nearlly two month. Closes: #302711
+  * The same with #260179. But here, the submitter did not answer after
+    nearlly one year. Closes: #260179
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Sat, 14 Oct 2006 09:37:10 +0200
+
+plib (1.8.4-4.1) unstable; urgency=low
+
+  * NMU.
+  * Drop build dependency on g++-4.0. Closes: #385836.
+
+ -- Matthias Klose <doko@debian.org>  Sun,  3 Sep 2006 16:57:16 +0000
+
+plib (1.8.4-4) unstable; urgency=low
+
+  * Thanks for the NMU! Closes: #372772
+  * Bumped standards version to 3.7.2 (no changes)
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Thu, 22 Jun 2006 11:13:43 +0200
+
+plib (1.8.4-3.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * Add build-dependency on libxi-dev; fixes FTBFS. (Closes: #372772)
+
+ -- Steinar H. Gunderson <sesse@debian.org>  Mon, 19 Jun 2006 23:17:39 +0200
+
+plib (1.8.4-3) unstable; urgency=low
+
+  * Fixes for GNU/kFreeBSD. Closes: #332995
+  * Properly use autotools to recreate configure, Makefiles etc.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Tue, 25 Oct 2005 17:55:16 +0200
+
+plib (1.8.4-2) unstable; urgency=low
+
+  * New package name for plib1.8.4 -> plib1.8.4c2 as advised by the
+    GCC 4.0 transition guide.
+  * Bumped standards version to 3.6.2
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Wed,  6 Jul 2005 21:46:45 +0200
+
+plib (1.8.4-1) unstable; urgency=low
+
+  * New upstream release: accumulated small bug fixes, minor enhancements.
+  * Changed debian/watch file.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Tue, 25 Jan 2005 16:34:05 +0100
+
+plib (1.8.3-2) unstable; urgency=low
+
+  * Corrected C++ syntax in ssgAux/ssgaSky.h. Thanks to
+    neuro.harald AT surfeu.at for the patch. Closes: #260355
+  * Build-Depends on libx11-dev, libxmu-dev instead of xlibs-dev
+  * Removed build depends on g++, libc6.
+  * Changed (build) depends on libgl-dev to xlibmesa-gl-dev | libgl-dev
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Thu, 26 Aug 2004 23:31:16 +0200
+
+plib (1.8.3-1) unstable; urgency=low
+
+  * New upstream release:
+    - NET now allows a NULL argument to netSocket::accept
+    - Added #include <stdio.h> to all top level header files
+      in order to ensure that NULL is defined.
+    - Added ssgaScreenDump into ssgAux.dsp
+    - Cleaned up some warnings from MSVC.
+    - Added Christos Dimitrakakis' fixes to SL to prevent
+      crackling in certain envelope conditions.
+    - Added pwAutoRepeatKey to control keyboard auto-repeat.
+    - Fixed a horrific bug in the sgDistToLineSegment routines.
+  * The above includes changes in the header files and therefore, we
+    have a new soname.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Sun, 11 Apr 2004 20:40:53 +0200
+
+plib (1.8.2-2) unstable; urgency=low
+
+  * Changed dependencies from glutg3* to libglut3*.
+  * Added build dependency to libc6-dev | libc-dev
+  * Changed SONAME from 1 to 1.8 (though I had this naming scheme since
+    long ago), changed package names also.
+  * Removed shlibs file.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Sun,  4 Apr 2004 14:23:19 +0200
+
+plib (1.8.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Reverted package name from plib1c102 to plib1 as we have a new so-name.
+  * Updated config.guess and config.sub
+  * Added debian/watch file
+  * Some other changes in rules file
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Fri, 26 Mar 2004 23:46:54 +0100
+
+plib (1.6.0-4) unstable; urgency=low
+
+  * Add automake1.7 as alternative to automake to build dependencies
+  * Create a new package plib-pic which is a copy of plib-dev but
+    the libraries have -fPIC code opposed to plib-dev. Closes: #229852
+  * Made the package descriptions somewhat clearer.
+  * Bumped standards version to 3.6.1
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Wed, 18 Feb 2004 13:15:57 +0100
+
+plib (1.6.0-3) unstable; urgency=low
+
+  * Adapted shlibs file to name change. Closes: #177775
+    Tried to follow the hint in the same bug.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Mon,  3 Feb 2003 18:15:57 +0100
+
+plib (1.6.0-2) unstable; urgency=low
+
+  * Changed name of binary package to plib1c102, recompiled with gcc 3.2
+    and added a conflict to plib1
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Sun, 12 Jan 2003 17:10:11 +0100
+
+plib (1.6.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Thu,  5 Sep 2002 22:18:18 +0200
+
+plib (1.4.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Tue, 26 Jun 2001 15:02:49 +0000
+
+plib (1.4.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Thu, 21 Jun 2001 06:35:36 +0000
+
+plib1.3 (1.3.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Thu, 14 Jun 2001 10:35:13 +0000
+
+plib1.3 (1.3.1-6) unstable; urgency=low
+
+  * Changed names of the libraries from libplib* to libplib1.3*. The
+    symlinks in the -dev package still have to old libplib* names -- but
+    they point to libplib1.3* version, of course.
+    Now plib1.3 no longer conflicts with plib1 and vice-versa. The -dev
+    packages still do, though. Closes: #87276
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Tue, 27 Feb 2001 12:54:23 +0000
+
+plib1.3 (1.3.1-5) unstable; urgency=low
+
+  * Added patch from Paul Slootman to include float.h in sg.h.
+    Closes: #86581.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Tue, 20 Feb 2001 10:15:08 +0000
+
+plib1.3 (1.3.1-4) unstable; urgency=low
+
+  * Adapted shlibs file to -4.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Thu,  8 Feb 2001 17:05:47 +0000
+
+plib1.3 (1.3.1-3) unstable; urgency=low
+
+  * Recompile with XFree86 4 installed.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Wed,  7 Feb 2001 13:29:11 +0000
+
+plib1.3 (1.3.1-2) unstable; urgency=low
+
+  * License addendum added to debian/copyright
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Wed, 15 Nov 2000 13:31:58 +0100
+
+plib1.3 (1.3.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Mon, 13 Nov 2000 09:59:46 +0100
+
+plib (1.2.0-2) unstable; urgency=low
+
+  * Rebuild with new X installed. Closes: #76786
+  * Takes care of the unstable branch of plib (which is
+    called plib1.3 and plib1.3-dev: conflicts!)
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Mon, 13 Nov 2000 09:53:24 +0100
+
+plib (1.2.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Thu,  6 Jul 2000 08:26:30 +0200
+
+plib (1.1.12-2) unstable; urgency=low
+
+  * Added build dependency to debhelper, closes: #66390
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Fri, 30 Jun 2000 09:14:48 +0200
+
+plib (1.1.12-1) unstable; urgency=low
+
+  * New upstream release
+  * Added build dependencies, bumped standars version number
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Mon, 26 Jun 2000 08:26:46 +0200
+
+plib (1.1.11-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Fri, 11 Feb 2000 18:50:09 +0100
+
+plib (1.1.10-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Wed,  9 Feb 2000 11:00:23 +0100
+
+plib (1.1.9-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Mon, 31 Jan 2000 15:53:27 +0100
+
+plib (1.1.8-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Mon, 24 Jan 2000 10:33:32 +0100
+
+plib (1.1.7-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Fri, 21 Jan 2000 08:58:04 +0100
+
+plib (1.1.5-4) frozen unstable; urgency=low
+
+  * Update dependencies to point to new virtual package libgl1 and libgl-dev
+    respectively. Closes: #55128
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Wed, 19 Jan 2000 08:03:56 +0100
+
+plib (1.1.5-3) unstable; urgency=low
+
+  * Forgot to update the shlibs file for the strict dependencies.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Wed, 22 Dec 1999 16:48:04 +0100
+
+plib (1.1.5-2) unstable; urgency=low
+
+  * Added "#include <string.h>" to src/ssg/ssg.h. Closes: #53250
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Wed, 22 Dec 1999 09:02:58 +0100
+
+plib (1.1.5-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Tue, 21 Dec 1999 17:46:12 +0100
+
+plib (1.1.2-2) unstable; urgency=low
+
+  * Commented out call to dh_makeshlibs from rules file in order
+    to get the promised strict dependencies.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Fri, 12 Nov 1999 14:58:23 +0100
+
+plib (1.1.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Shared libraries are in again but with strict dependencies.
+    Closes: #49648, #49851 (file overwrite problem due to removal
+    of plib-dev package which is present again).
+  * Upstream removed the doc and examples which are in a separate
+    source package but in the same binary package as before.
+  * Standards-Version: 3.0.1
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Fri, 12 Nov 1999 13:55:45 +0100
+
+plib (1.1.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Removed shared libraries (C++ shared libs are a Bad Thing).
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Mon,  8 Nov 1999 08:43:23 +0100
+
+plib (1.0.19-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove static dependency of libc6 from plib1. Closes: #47478.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Tue, 19 Oct 1999 09:07:56 +0200
+
+plib (1.0.18-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Thu,  7 Oct 1999 17:23:04 +0200
+
+plib (1.0.16-2) unstable; urgency=low
+
+  * 'Depends: mesag3 | mesag3+ggi' (hope this works although I
+     compiled with mesag3 installed). Closes: #44817.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Wed, 29 Sep 1999 14:42:46 +0200
+
+plib (1.0.16-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Sat, 14 Aug 1999 09:26:00 +0200
+
+plib (1.0.14-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Sun,  8 Aug 1999 11:16:52 +0200
+
+plib (1.0.13-1) unstable; urgency=low
+
+  * New upstream release.
+  * Use debhelper v2.
+  * Changed shared library package name from plib to plib1.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Sat, 17 Jul 1999 10:47:26 +0200
+
+plib (1.0.12-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Wed,  7 Jul 1999 18:26:32 +0200
+
+plib (1.0.10-2) unstable; urgency=low
+
+  * Added some more documentation to /usr/doc/<package>
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Sun, 16 May 1999 22:17:36 +0200
+
+plib (1.0.10-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Philipp Frauenfelder <pfrauenf@debian.org>  Wed, 12 May 1999 21:10:59 +0200
+
+Local variables:
+mode: debian-changelog
+End:
